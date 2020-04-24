@@ -1,0 +1,12 @@
+Unit]
+Description=Cargauge OBD2 application
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/cargauge
+ExecStart=python3 webserver.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
