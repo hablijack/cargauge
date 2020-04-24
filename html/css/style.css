@@ -11,32 +11,32 @@ body {
 
 #speedometer {
     position: absolute;
-    left: 265px;
+    left: 200px;
     bottom: 0;
     z-index: 0;
 }
 
 #t4image {
     position: absolute;
-    bottom: 51px;
-    left: 389px;
-    width: 212px;
+    bottom: 45px;
+    left: 312px;
+    width: 176px;
     z-index: 2;
 }
 
 #vwlogo {
-    width: 60px;
-    left: 470px;
+    width: 50px;
+    left: 375px;
     position: absolute;
-    bottom: 283px;
+    bottom: 235px;
     z-index: -1;
 }
 
 #road {
     position: absolute;
     bottom: 0;
-    left: 200px;
-    height: 150px;
+    left: 127px;
+    height: 140px;
     z-index: 1;
 }
 
@@ -54,49 +54,49 @@ body {
 #speed {
     color: white;
     font-weight: bold;
-    font-size: 75px;
+    font-size: 50px;
     position: absolute;
     bottom: 0px;
-    right: 14px;
+    right: 3px;
     z-index: 20;
 }
 
 #speed small {
     font-weight: normal;
-    font-size: 30px;
+    font-size: 22px;
 }
 
 #fuellevel {
     position: absolute;
-    left: 0px;
+    left: -5px;
     z-index: 20;
-    bottom: -15px;
+    bottom: -20px;
 }
 
 #fuelicon {
     position: absolute;
-    bottom: 20px;
-    left: 220px;
+    bottom: 12px;
+    left: 143px;
     z-index: 25;
 }
 
 #oilpressure {
     position: absolute;
-    right: -125px;
-    bottom: 75px;
+    right: -120px;
+    bottom: 55px;
 }
 #oiltemp {
     position: absolute;
-    left: -125px;
-    bottom: 75px;
+    left: -120px;
+    bottom: 55px;
 }
 #oilpressureicon {
     position: absolute;
     right: 13px;
-    bottom: 250px;
+    bottom: 215px;
 }
 #oiltempicon {
     position: absolute;
     left: 13px;
-    bottom: 250px;
+    bottom: 215px;
 }

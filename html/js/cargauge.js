@@ -2,8 +2,8 @@ $(document).ready(function(){
 
     var oiltemp = new RadialGauge({
         renderTo: 'oiltemp',
-        width: 330,
-        height: 320,
+        width: 300,
+        height: 300,
         minValue: 0,
         value: 0,
         ticksStartPosition: "right",
@@ -55,8 +55,8 @@ $(document).ready(function(){
 
     var oilpressure = new RadialGauge({
         renderTo: 'oilpressure',
-        width: 330,
-        height: 320,
+        width: 300,
+        height: 300,
         minValue: 0,
         value: 0,
         startAngle: 350,
@@ -115,7 +115,7 @@ $(document).ready(function(){
         majorTicks: [0,50,100],
         minorTicks: 2,
         highlights: 0,
-        width: 220,
+        width: 150,
         height: 80,
         value: 0,
         colorNumbers: "white",
@@ -130,8 +130,8 @@ $(document).ready(function(){
 
     var speedometer = new RadialGauge({
         renderTo: 'speedometer',
-        width: 470,
-        height: 470,
+        width: 400,
+        height: 400,
         title: false,
         value: 0,
         minValue: 0 ,
