@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Aldrich';
+    src: url('../fonts/aldrich.woff2') format('woff2');
+}  
+
 body {
     overflow: hidden;
     background-color: black;
@@ -44,26 +49,54 @@ body {
     left: -17px;
     padding-left: 30px;
     padding-top: 30px;
-    border: 4px solid #0088ff;
-    border-radius: 18px;
-    border-top: 0;
-    border-left: 0;
-    padding-bottom: 6px;
-    padding-right: 10px;
 }
 
 #speed {
     color: white;
     font-weight: bold;
-    font-size: 60px;
+    font-size: 75px;
     position: absolute;
     bottom: 0px;
-    right: 20px;
+    right: 14px;
     z-index: 20;
 }
 
 #speed small {
     font-weight: normal;
     font-size: 30px;
-    margin-left: 5px;
+}
+
+#fuellevel {
+    position: absolute;
+    left: 0px;
+    z-index: 20;
+    bottom: -15px;
+}
+
+#fuelicon {
+    position: absolute;
+    bottom: 20px;
+    left: 220px;
+    z-index: 25;
+}
+
+#oilpressure {
+    position: absolute;
+    right: -125px;
+    bottom: 75px;
+}
+#oiltemp {
+    position: absolute;
+    left: -125px;
+    bottom: 75px;
+}
+#oilpressureicon {
+    position: absolute;
+    right: 13px;
+    bottom: 250px;
+}
+#oiltempicon {
+    position: absolute;
+    left: 13px;
+    bottom: 250px;
 }
