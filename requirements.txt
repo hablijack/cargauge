@@ -1,3 +1,4 @@
 obd
 flask
 waitress
+flask-socketio

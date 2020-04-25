@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    var socket = io();
+
     var oiltemp = new RadialGauge({
         renderTo: 'oiltemp',
         width: 300,
@@ -53,8 +55,8 @@ $(document).ready(function(){
         barShadow: 0
     }).draw();
 
-    var oilpressure = new RadialGauge({
-        renderTo: 'oilpressure',
+    var coolanttemp = new RadialGauge({
+        renderTo: 'coolanttemp',
         width: 300,
         height: 300,
         minValue: 0,
@@ -62,11 +64,11 @@ $(document).ready(function(){
         startAngle: 350,
         ticksAngle: 200,
         valueBox: false,
-        maxValue: 8,
-        majorTicks: ["0","1","2","3","4","5","6","7","8"],
+        maxValue: 120,
+        majorTicks: ["0","20","40","60","80","100","120"],
         minorTicks: 1,
         strokeTicks: true,
-        highlights: [{"from": 6, "to": 8,"color": "darkRed"}],
+        highlights: [{"from": 100, "to": 120,"color": "darkRed"}],
         colorPlate:"transparent",
         colorMajorTicks:"#0088ff",
         colorMinorTicks:"#0088ff",
@@ -175,16 +177,26 @@ $(document).ready(function(){
         barShadow: "0"
     }).draw();
 
-    speedometer.value = 180;
-    speedometer.draw();
-
-    fuellevel.value = 100;
-    fuellevel.draw();
-
-    oilpressure.value = 8;
-    oilpressure.draw();
-
-    oiltemp.value = 150;
-    oiltemp.draw();
-    
+    socket.on('speed_update', function(message) {
+        speedometer.value = message.data;
+        speedometer.draw();
+    });
+    socket.on('fuel_update', function(message) {
+        fuellevel.value = message.data;
+        fuellevel.draw();
+    });
+    socket.on('oil_temp_update', function(message) {
+        oiltemp.value = message.data;
+        oiltemp.draw();
+    });
+    socket.on('coolant_temp_update', function(message) {
+        coolanttemp.value = message.data;
+        coolanttemp.draw();
+    });
+    socket.on('intake_temp_update', function(message) {
+        console.log(message)
+    });
+    socket.on('connect', function() {
+        $("#connectionsign").removeClass("hidden");
+    });
 });
