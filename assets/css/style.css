@@ -7,7 +7,7 @@
     filter: invert(100%);
     position: absolute;
     top: 13px;
-    left: 12px;
+    left: 8px;
     width: 29px;
 }
 
@@ -58,7 +58,7 @@ body {
     font-size: 40px;
     position: absolute;
     top: -17px;
-    left: 24px;
+    left: 11px;
     padding-left: 30px;
     padding-top: 30px;
 }
@@ -71,6 +71,7 @@ body {
     bottom: 0px;
     right: 3px;
     z-index: 20;
+    transition: opacity 0.5s;
 }
 
 #speed small {
@@ -90,6 +91,7 @@ body {
     bottom: 12px;
     left: 143px;
     z-index: 25;
+    width: 30px;
 }
 
 #coolanttemp {
@@ -110,5 +112,6 @@ body {
 #oiltempicon {
     position: absolute;
     left: 13px;
+    width: 55px;
     bottom: 215px;
 }

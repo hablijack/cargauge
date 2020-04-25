@@ -5,11 +5,14 @@
 from flask import Flask, render_template, send_from_directory
 from flask_socketio import SocketIO
 import obd
-
+from apscheduler.schedulers.background import BackgroundScheduler
 import time
 
 app = Flask(__name__)
 socketio = SocketIO(app)
+
+def update_clock():
+    socketio.emit('clock_update', {'data': time.strftime("%I:%M")})
 
 def speed_update(r):
     socketio.emit('speed_update', {'data': r.value})
@@ -39,6 +42,9 @@ def overview():
     return render_template('index.html')
 
 if __name__ == '__main__':
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(func=update_clock, trigger="interval", seconds=5)
+    scheduler.start()
     connection = obd.Async()
     connection.watch(obd.commands.SPEED, callback=speed_update)
     connection.watch(obd.commands.FUEL_LEVEL, callback=fuel_update)

@@ -178,6 +178,7 @@ $(document).ready(function(){
     }).draw();
 
     socket.on('speed_update', function(message) {
+        $("#speedtext").html(message.data);
         speedometer.value = message.data;
         speedometer.draw();
     });
@@ -198,5 +199,10 @@ $(document).ready(function(){
     });
     socket.on('connect', function() {
         $("#connectionsign").removeClass("hidden");
+    });
+    socket.on('clock_update', function(message) {
+        if($('#clock').html() != message.data) {
+            $("#clock").html(message.data);
+        }
     });
 });
