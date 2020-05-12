@@ -1,0 +1,13 @@
+[Unit]
+Description=Python app to check if usv is triggered and wait for 10 seconds to kill power
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/cargauge
+ExecStart=/usr/bin/python3 /home/pi/cargauge/usv_shutdown.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+

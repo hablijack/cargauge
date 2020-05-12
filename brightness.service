@@ -1,0 +1,13 @@
+[Unit]
+Description=Python app to adjust display brightness application
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/cargauge
+ExecStart=/usr/bin/python3 /home/pi/cargauge/adjust_brightness.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
