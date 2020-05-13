@@ -16,7 +16,7 @@ app = Flask(__name__)
 socketio = SocketIO(app)
 
 def update_clock():
-    socketio.emit('clock_update', {'data': time.strftime("%I:%M")})
+    socketio.emit('clock_update', {'data': time.strftime("%H:%M")})
 
 def speed_update(r):
     socketio.emit('speed_update', {'data': r.value})
