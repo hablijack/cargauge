@@ -8,6 +8,10 @@ import obd
 from apscheduler.schedulers.background import BackgroundScheduler
 import time
 
+import logging
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
+
 app = Flask(__name__)
 socketio = SocketIO(app)
 

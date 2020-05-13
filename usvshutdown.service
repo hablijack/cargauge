@@ -7,6 +7,9 @@ User=pi
 WorkingDirectory=/home/pi/cargauge
 ExecStart=/usr/bin/python3 /home/pi/cargauge/usv_shutdown.py
 Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=usvshutdown
 
 [Install]
 WantedBy=multi-user.target

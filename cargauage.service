@@ -7,6 +7,9 @@ User=pi
 WorkingDirectory=/home/pi/cargauge
 ExecStart=/usr/bin/python3 /home/pi/cargauge/webserver.py
 Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=cargauge
 
 [Install]
 WantedBy=multi-user.target

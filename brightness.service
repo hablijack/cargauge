@@ -7,6 +7,9 @@ User=pi
 WorkingDirectory=/home/pi/cargauge
 ExecStart=/usr/bin/python3 /home/pi/cargauge/adjust_brightness.py
 Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=brightness
 
 [Install]
 WantedBy=multi-user.target
